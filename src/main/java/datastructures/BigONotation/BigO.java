@@ -1,4 +1,4 @@
-package BigONotation;
+package datastructures.BigONotation;
 
 public class BigO {
 
