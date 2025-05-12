@@ -27,6 +27,21 @@ public class LinkedListImpl {
         linkedListRemoveLast.append(20);
         linkedListRemoveLast.length();
 
+        System.out.println();
+        System.out.println("Prepend");
+        LinkedList linkedListPrepend = new LinkedList(10);
+        linkedListPrepend.append(12);
+        linkedListPrepend.prepend(5);
+        linkedListPrepend.printValues();
+        linkedListPrepend.length();
+
+        System.out.println();
+        System.out.println("Remove First");
+        LinkedList linkedListRemoveFirst = new LinkedList(10);
+        linkedListRemoveFirst.append(5);
+        linkedListRemoveFirst.removeFirst();
+        linkedListRemoveFirst.printValues();
+
 
     }
 }

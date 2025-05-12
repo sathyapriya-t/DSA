@@ -70,8 +70,34 @@ public class LinkedList {
                 tail = null;
             }
             return temp.value;
-
         }
+    }
 
+    public Integer prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+            length++;
+        } else {
+            newNode.next = head;
+            head = newNode;
+            length++;
+        }
+        return value;
+    }
+
+    public void removeFirst() {
+        if (length == 0) {
+            System.out.println("List is empty");
+        } else {
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+        }
+        length--;
+        if (length == 0) {
+            tail = null;
+        }
     }
 }
