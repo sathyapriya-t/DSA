@@ -42,12 +42,11 @@ public class LinkedList {
         Node node = new Node(newValue);
         if(length ==0){
             head = node;
-            tail = node;
         }
         else {
             tail.next = node;
-            tail = node;
         }
+        tail = node;
         length++;
 
     }
