@@ -40,8 +40,15 @@ public class LinkedList {
 
     public void append(int newValue){
         Node node = new Node(newValue);
-        head.next = node;
-        tail = node;
+        if(length ==0){
+            head = node;
+            tail = node;
+        }
+        else {
+            tail.next = node;
+            tail = node;
+        }
         length++;
+
     }
 }
