@@ -13,5 +13,20 @@ public class LinkedListImpl {
         linkedList.getTail();
         linkedList.printValues();
         linkedList.length();
+
+        System.out.println();
+        System.out.println("Remove Last: ");
+        LinkedList linkedListRemoveLast = new LinkedList(10);
+        linkedListRemoveLast.append(20);
+        linkedListRemoveLast.removeLast();
+        linkedListRemoveLast.printValues();
+        Integer removed = linkedListRemoveLast.removeLast();
+        System.out.println("removed value: "+ removed);
+        linkedListRemoveLast.printValues();
+        linkedListRemoveLast.length();
+        linkedListRemoveLast.append(20);
+        linkedListRemoveLast.length();
+
+
     }
 }

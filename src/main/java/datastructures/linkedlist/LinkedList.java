@@ -8,6 +8,7 @@ public class LinkedList {
     class Node {
         int value;
         Node next;
+
         Node(int value) {
             this.value = value;
         }
@@ -19,6 +20,7 @@ public class LinkedList {
         this.tail = newNode;
         length = 1;
     }
+
     public void printValues() {
         Node temp = head;
         while (temp != null) {
@@ -26,6 +28,7 @@ public class LinkedList {
             temp = temp.next;
         }
     }
+
     public void getHead() {
         System.out.println("Head: " + head.value);
     }
@@ -38,16 +41,37 @@ public class LinkedList {
         System.out.println("Length: " + length);
     }
 
-    public void append(int newValue){
+    public void append(int newValue) {
         Node node = new Node(newValue);
-        if(length ==0){
+        if (length == 0) {
             head = node;
-        }
-        else {
+        } else {
             tail.next = node;
         }
         tail = node;
         length++;
+    }
+
+    public Integer removeLast() {
+        if (length == 0) {
+            return null;
+        } else {
+            Node temp = head;
+            Node pre = head;
+            while (temp.next != null) {
+                pre = temp;
+                temp = temp.next;
+            }
+            tail = pre;
+            tail.next = null;
+            length--;
+            if (length == 0) {
+                head = null;
+                tail = null;
+            }
+            return temp.value;
+
+        }
 
     }
 }
