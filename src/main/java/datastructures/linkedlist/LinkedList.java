@@ -100,4 +100,18 @@ public class LinkedList {
             tail = null;
         }
     }
+
+    public Boolean set(int index, int value){
+        if(index < 0 || index> length){
+           return false;
+        }
+        else {
+            Node temp = head;
+            for(int i = 0; i<index;i++){
+                temp = temp.next;
+            }
+            temp.value = value;
+            return true;
+        }
+    }
 }

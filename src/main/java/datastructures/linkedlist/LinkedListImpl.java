@@ -42,6 +42,14 @@ public class LinkedListImpl {
         linkedListRemoveFirst.removeFirst();
         linkedListRemoveFirst.printValues();
 
+        System.out.println();
+        System.out.println("Set value at a specific index");
+        LinkedList linkedListSet = new LinkedList(10);
+        linkedListSet.append(12);
+        linkedListSet.printValues();
+        System.out.println(linkedListSet.set(1,15));
+        linkedListSet.printValues();
+
 
     }
 }
