@@ -20,8 +20,8 @@ public class LinkedListImpl {
         linkedListRemoveLast.append(20);
         linkedListRemoveLast.removeLast();
         linkedListRemoveLast.printValues();
-        Integer removed = linkedListRemoveLast.removeLast();
-        System.out.println("removed value: "+ removed);
+        LinkedList.Node removed = linkedListRemoveLast.removeLast();
+        System.out.println("removed value: "+ removed.value);
         linkedListRemoveLast.printValues();
         linkedListRemoveLast.length();
         linkedListRemoveLast.append(20);
@@ -63,6 +63,15 @@ public class LinkedListImpl {
         System.out.println(linkedListInsert.insert(7,27));
         linkedListInsert.printValues();
 
+        System.out.println();;
+        System.out.println("Removing value from specific place");
+        LinkedList linkedListRemove = new LinkedList(10);
+        linkedListRemove.append(12);
+        linkedListRemove.append(20);
+        linkedListRemove.printValues();
+        linkedListRemove.length();
+        linkedListRemove.remove(1);
+        linkedListRemove.printValues();
 
     }
 }

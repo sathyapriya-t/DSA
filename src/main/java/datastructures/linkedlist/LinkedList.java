@@ -5,15 +5,6 @@ public class LinkedList {
     private Node tail;
     private int length;
 
-    class Node {
-        int value;
-        Node next;
-
-        Node(int value) {
-            this.value = value;
-        }
-    }
-
     public LinkedList(int value) {
         Node newNode = new Node(value);
         this.head = newNode;
@@ -52,7 +43,7 @@ public class LinkedList {
         length++;
     }
 
-    public Integer removeLast() {
+    public Node removeLast() {
         if (length == 0) {
             return null;
         } else {
@@ -69,7 +60,7 @@ public class LinkedList {
                 head = null;
                 tail = null;
             }
-            return temp.value;
+            return temp;
         }
     }
 
@@ -87,27 +78,26 @@ public class LinkedList {
         return value;
     }
 
-    public void removeFirst() {
+    public Node removeFirst() {
         if (length == 0) {
-            System.out.println("List is empty");
-        } else {
-            Node temp = head;
-            head = head.next;
-            temp.next = null;
+            return null;
         }
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
         length--;
         if (length == 0) {
             tail = null;
         }
+        return temp;
     }
 
-    public Boolean set(int index, int value){
-        if(index < 0 || index> length){
-           return false;
-        }
-        else {
+    public Boolean set(int index, int value) {
+        if (index < 0 || index > length) {
+            return false;
+        } else {
             Node temp = head;
-            for(int i = 0; i<index;i++){
+            for (int i = 0; i < index; i++) {
                 temp = temp.next;
             }
             temp.value = value;
@@ -115,17 +105,16 @@ public class LinkedList {
         }
     }
 
-    public Boolean insert(int index, int value){
-        if(index<0 || index > length){
+    public Boolean insert(int index, int value) {
+        if (index < 0 || index > length) {
             return false;
         } else if (index == 0) {
             prepend(value);
             return true;
-        } else if (index == length-1) {
+        } else if (index == length - 1) {
             append(value);
             return true;
-        }
-        else {
+        } else {
             Node temp = head;
             Node pre = head;
             for (int i = 0; i < index; i++) {
@@ -138,6 +127,36 @@ public class LinkedList {
             length++;
             return true;
 
+        }
+    }
+
+    public Node remove(int index) {
+        if (index < 0 || index > length) {
+            return null;
+        } else if (index == 0) {
+            return removeFirst();
+        } else if (index == length - 1) {
+            return removeLast();
+        } else {
+            Node pre = head;
+            Node temp = head;
+            for (int i = 0; i < index; i++) {
+                pre = temp;
+                temp = temp.next;
+            }
+            pre.next = temp.next;
+            temp.next = null;
+            length--;
+            return temp;
+        }
+    }
+
+    class Node {
+        int value;
+        Node next;
+
+        Node(int value) {
+            this.value = value;
         }
     }
 }
