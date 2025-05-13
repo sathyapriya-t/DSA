@@ -50,6 +50,19 @@ public class LinkedListImpl {
         System.out.println(linkedListSet.set(1,15));
         linkedListSet.printValues();
 
+        System.out.println();
+        System.out.println("Insert value at a specific index");
+        LinkedList linkedListInsert = new LinkedList(10);
+        linkedListInsert.append(15);
+        linkedListInsert.append(20);
+        linkedListInsert.printValues();
+        linkedListInsert.length();
+        linkedListInsert.insert(1,17);
+        linkedListInsert.insert(0,7);
+        System.out.println(linkedListInsert.insert(5,27));
+        System.out.println(linkedListInsert.insert(7,27));
+        linkedListInsert.printValues();
+
 
     }
 }
