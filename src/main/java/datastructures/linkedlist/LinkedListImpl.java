@@ -31,7 +31,7 @@ public class LinkedListImpl {
         System.out.println("Prepend");
         LinkedList linkedListPrepend = new LinkedList(10);
         linkedListPrepend.append(12);
-        linkedListPrepend.prepend(5);
+        System.out.println(linkedListPrepend.prepend(5));
         linkedListPrepend.printValues();
         linkedListPrepend.length();
 
@@ -63,15 +63,24 @@ public class LinkedListImpl {
         System.out.println(linkedListInsert.insert(7,27));
         linkedListInsert.printValues();
 
-        System.out.println();;
+        System.out.println();
         System.out.println("Removing value from specific place");
         LinkedList linkedListRemove = new LinkedList(10);
         linkedListRemove.append(12);
         linkedListRemove.append(20);
         linkedListRemove.printValues();
         linkedListRemove.length();
-        linkedListRemove.remove(1);
+        System.out.println(linkedListRemove.remove(1).value);
         linkedListRemove.printValues();
+
+        System.out.println();
+        System.out.println("Reversing the list");
+        LinkedList linkedListReverse = new LinkedList(10);
+        linkedListReverse.append(20);
+        linkedListReverse.append(30);
+        linkedListReverse.printValues();
+        linkedListReverse.reverse();
+        linkedListReverse.printValues();
 
     }
 }
