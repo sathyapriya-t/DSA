@@ -43,6 +43,22 @@ public class LinkedListImpl {
         linkedListRemoveFirst.printValues();
 
         System.out.println();
+        System.out.println("Get the value based on index");
+        LinkedList linkedListGet = new LinkedList(10);
+        linkedListGet.append(5);
+        linkedListGet.append(12);
+        System.out.println(linkedListGet.get(2));
+
+        System.out.println();
+        System.out.println("Get the value based on index using for loop");
+        LinkedList linkedListGet1 = new LinkedList(10);
+        linkedListGet1.append(5);
+        linkedListGet1.append(12);
+        linkedListGet1.length();
+        System.out.println(linkedListGet1.getUsingForLoop(2).value);
+
+
+        System.out.println();
         System.out.println("Set value at a specific index");
         LinkedList linkedListSet = new LinkedList(10);
         linkedListSet.append(12);

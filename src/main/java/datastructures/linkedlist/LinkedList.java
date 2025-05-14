@@ -172,4 +172,36 @@ public class LinkedList {
             this.value = value;
         }
     }
+
+    public Integer get(int index){
+        if(index<=length) {
+            if (index == 0) {
+                return head.value;
+            } else {
+                Node temp = head;
+                int count = 0;
+                while (count != index) {
+                    head = head.next;
+                    count++;
+                    temp = head;
+
+                }
+                return temp.value;
+            }
+        }
+        return null;
+    }
+
+    public Node getUsingForLoop(int index){
+        if(index<0 || index>length){
+            return null;
+        }
+        else {
+            Node temp = head;
+            for(int i = 0;i<index;i++){
+                temp = temp.next;
+            }
+            return temp;
+        }
+    }
 }
