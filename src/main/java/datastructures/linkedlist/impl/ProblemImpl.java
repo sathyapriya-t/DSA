@@ -48,6 +48,25 @@ public class ProblemImpl {
         linkedListHasLoop.getTail().next = linkedListHasLoop.getHead();
         System.out.println(linkedListHasLoop.hasLoop());
 
+        //Finding Kth node from the end
+        /*This is a common technique in computer science known as the
+        'fast-pointer / slow-pointer' or 'runner' technique
+        ->initialize two variable(slow, fast) move fast to k times using loop and
+        ->then move both variable one at a time until fast reached null.
+        ->finally slow will be at kth node from the end.(because the distance between two node is k)
+        */
+        System.out.println();
+        System.out.println("Finding Kth node from the end");
+        LinkedListWithNoLength linkedListKthNodeFromEnd = new LinkedListWithNoLength(10);
+        linkedListKthNodeFromEnd.append(20);
+        linkedListKthNodeFromEnd.append(30);
+        linkedListKthNodeFromEnd.append(40);
+        linkedListKthNodeFromEnd.append(50);
+        linkedListKthNodeFromEnd.append(60);
+        System.out.println(linkedListKthNodeFromEnd.findKthFromEnd(2).value);
+        LinkedListWithNoLength.Node kthFromEnd = linkedListKthNodeFromEnd.findKthFromEnd(6);
+        System.out.println(kthFromEnd == null ? null : kthFromEnd.value);
+
 
     }
 }
