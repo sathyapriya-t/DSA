@@ -1,4 +1,4 @@
-package datastructures.linkedlist;
+package datastructures.linkedlist.domine;
 
 public class LinkedList {
     private Node head;
@@ -168,7 +168,7 @@ public class LinkedList {
 
      public class Node {
         public int value;
-        Node next;
+        public Node next;
 
         Node(int value) {
             this.value = value;

@@ -1,11 +1,11 @@
-package datastructures.linkedlist;
+package datastructures.linkedlist.domine;
 
-public class FindMiddleNodeLinkedList {
+public class LinkedListWithNoLength {
 
     private Node head;
     private Node tail;
 
-    public FindMiddleNodeLinkedList(int value) {
+    public LinkedListWithNoLength(int value) {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -75,9 +75,38 @@ public class FindMiddleNodeLinkedList {
         return slow;
     }
 
+    public boolean hasLoop() {
+
+        /*Write a method called hasLoop that is part of the linked list class.
+        The method should be able to detect if there is a cycle or loop present in the linked list.
+        You are required to use Floyd's cycle-finding algorithm (also known as the "tortoise and the hare" algorithm) to detect the loop.
+        This algorithm uses two pointers:
+           a slow pointer and a fast pointer.
+           The slow pointer moves one step at a time, while the fast pointer moves two steps at a time.
+           If there is a loop in the linked list, the two pointers will eventually meet at some point. If there is no loop, the fast pointer will reach the end of the list.
+         */
+        if (head == null) {
+            return false;
+        }
+        if (head.next == null) {
+            return false;
+
+        }
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public class Node {
         public int value;
-        Node next;
+        public Node next;
 
         Node(int value) {
             this.value = value;
