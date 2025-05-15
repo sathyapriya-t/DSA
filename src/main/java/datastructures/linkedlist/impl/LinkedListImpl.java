@@ -1,15 +1,20 @@
-package datastructures.linkedlist;
+package datastructures.linkedlist.impl;
 
+import datastructures.linkedlist.FindMiddleNode;
+import datastructures.linkedlist.FindMiddleNodeLinkedList;
+import datastructures.linkedlist.LinkedList;
+
+//For remove last and first consider the edge case(Length 1)
 public class LinkedListImpl {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList(10);
-        linkedList.getHead();
+        System.out.println(linkedList.getHead().value);
         linkedList.getTail();
         linkedList.printValues();
         System.out.println("Appended");
         linkedList.append(20);
-        linkedList.getHead();
+        System.out.println(linkedList.getHead().value);
         linkedList.getTail();
         linkedList.printValues();
         linkedList.length();
@@ -97,6 +102,18 @@ public class LinkedListImpl {
         linkedListReverse.printValues();
         linkedListReverse.reverse();
         linkedListReverse.printValues();
+
+        System.out.println();
+        System.out.println("Finding a middle node");
+        LinkedList linkedList1 = new LinkedList(10);
+        linkedList1.append(12);
+        linkedList1.append(15);
+        linkedList1.append(17);
+        linkedList1.append(20);
+        FindMiddleNode findMiddleNode = new FindMiddleNode();
+        LinkedList.Node middleNode = findMiddleNode.findMiddleNode(linkedList1);
+        System.out.println(middleNode == null ? null: middleNode.value );
+
 
     }
 }

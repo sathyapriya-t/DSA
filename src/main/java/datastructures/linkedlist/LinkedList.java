@@ -20,16 +20,18 @@ public class LinkedList {
         }
     }
 
-    public void getHead() {
-        System.out.println("Head: " + head.value);
+    public Node getHead() {
+        //System.out.println("Head: " + head.value);
+        return head;
     }
 
     public void getTail() {
         System.out.println("Tail: " + tail.value);
     }
 
-    public void length() {
-        System.out.println("Length: " + length);
+    public int length() {
+        //System.out.println("Length: " + length);
+        return length;
     }
 
     public void append(int newValue) {
@@ -164,8 +166,8 @@ public class LinkedList {
         }
     }
 
-     public static class Node {
-        int value;
+     public class Node {
+        public int value;
         Node next;
 
         Node(int value) {
