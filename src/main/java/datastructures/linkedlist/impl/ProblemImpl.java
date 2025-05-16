@@ -1,6 +1,7 @@
 package datastructures.linkedlist.impl;
 
 import datastructures.linkedlist.domine.FindMiddleNode;
+import datastructures.linkedlist.domine.LinkedListNoTail;
 import datastructures.linkedlist.domine.LinkedListWithNoLength;
 import datastructures.linkedlist.domine.LinkedList;
 
@@ -68,5 +69,20 @@ public class ProblemImpl {
         System.out.println(kthFromEnd == null ? null : kthFromEnd.value);
 
 
+        //RemoveDuplicates
+        /*
+        //Initiate two varibles and one will stay will other loops through and compares each number
+        */
+        System.out.println();
+        System.out.println("Remove Duplicates from the list when it has no tail");
+        LinkedListNoTail linkedListRemoveDuplicates = new LinkedListNoTail(10);
+        linkedListRemoveDuplicates.append(20);
+        linkedListRemoveDuplicates.append(20);
+        linkedListRemoveDuplicates.append(10);
+        linkedListRemoveDuplicates.append(20);
+        linkedListRemoveDuplicates.append(10);
+        linkedListRemoveDuplicates.append(20);
+        linkedListRemoveDuplicates.removeDuplicatesIdeal();
+        linkedListRemoveDuplicates.printList();
     }
 }
