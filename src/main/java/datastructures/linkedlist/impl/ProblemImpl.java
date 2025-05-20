@@ -84,5 +84,24 @@ public class ProblemImpl {
         linkedListRemoveDuplicates.append(20);
         linkedListRemoveDuplicates.removeDuplicatesIdeal();
         linkedListRemoveDuplicates.printList();
+
+
+        //Binary to decimal
+        //eg -> base 2 because binary only has 0's and 1's
+        // 101 ->
+        // 1 -> (0*2)+1 -> 1
+        // 0 -> (1*2)+0 -> 2
+        // 1 -> (2*2)+1 -> 5
+        // decimal = 5
+
+        System.out.println();
+        System.out.println("Converting Binary to decimal when there is no length in list");
+        LinkedListWithNoLength listConvertBinaryToDecimal = new LinkedListWithNoLength(1);
+        listConvertBinaryToDecimal.append(1);
+        listConvertBinaryToDecimal.append(1);
+        listConvertBinaryToDecimal.append(1);
+        System.out.println(listConvertBinaryToDecimal.binaryToDecimal());
+
+
     }
 }

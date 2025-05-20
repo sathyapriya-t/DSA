@@ -105,7 +105,7 @@ public class LinkedListWithNoLength {
     }
 
 
-    public Node findKthFromEnd(int k){
+    public Node findKthFromEnd(int k) {
 
        /*
         Finding a nth node from the end when linked list has no length attribute
@@ -125,24 +125,61 @@ public class LinkedListWithNoLength {
         Node slow = head;
         Node fast = head;
 
-        if(head == null){
+        if (head == null) {
             return null;
         }
-        if(head.next == null){
+        if (head.next == null) {
             return head;
         }
-        for(int i=0;i<k;i++){
+        for (int i = 0; i < k; i++) {
             fast = fast.next;
-            if(fast == null){
+            if (fast == null) {
                 return null;
             }
         }
 
-        while(fast!=null){
+        while (fast != null) {
             fast = fast.next;
             slow = slow.next;
         }
         return slow;
+    }
+
+    public int binaryToDecimal() {
+
+        /*
+        Convert Binary to decimal
+        AS binary are 0's and 1's , we need to use base power 2
+
+        Coding calculation:
+
+        eg: 101 num= 0
+        1 => (0*2)+1 -> 1
+        0 => (1*2)+0 -> 2
+        1 => (2*2)+1 -> 5
+
+        so -> num = 5
+        ___________________________
+        Normal Calculation
+
+        example:  1 ->0 -> 1
+        position: 2   1    0
+
+        1 -> 2^0 * 1 => 1
+        0 => 2^1 * 0 => 0
+        1 -> 2^2 * 1 => 4
+
+        decimal = 1+0+4 = 5
+        ____________________________
+        */
+
+        Node current = head;
+        int decimal = 0;
+        while (current != null) {
+            decimal = (decimal * 2) + current.value;
+            current = current.next;
+        }
+        return decimal;
     }
 
     public class Node {
@@ -153,6 +190,5 @@ public class LinkedListWithNoLength {
             this.value = value;
         }
     }
-
 }
 
